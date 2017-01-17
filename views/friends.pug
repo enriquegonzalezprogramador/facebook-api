@@ -1,0 +1,26 @@
+html
+	head
+
+		link(rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+
+		link(rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/flat-ui/2.3.0/css/flat-ui.css")
+
+	body
+		.container
+			nav.navbar.navbar-inverse.navbar-embossed
+				.container-fluid
+					.navbar-header
+						a.navbar-brand(href="#") PlayBetcris
+					.collapse.navbar-collapse
+						ul.nav.navbar-nav.navbar-right
+							li
+								a(href="/friends") Buscar mis amigos
+							li
+								a(href="/auth/close") Cerrar sesión
+			section
+			h1 Ranking de amigos
+			.row
+				for user in users
+					.col-xs-6.text-center
+						img(src="http://graph.facebook.com/"+user.uid+"/picture?height=200")
+						h4=user.name
